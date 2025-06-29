@@ -55,12 +55,12 @@ def generate_blog(request):
 
 
 def yt_title(link):
-     yt = YouTube(link)
+     yt = YouTube(link, client="WEB")
      title = yt.title
      return title
 
 def download_audio(link):
-     yt = YouTube(link)
+     yt = YouTube(link, client="WEB")
      audio_stream = yt.streams.filter(only_audio=True).first()
      out_file = audio_stream.download(output_path=settings.MEDIA_ROOT)
      base, ext = os.path.splitext(out_file)
@@ -108,11 +108,11 @@ def generate_blog_from_transcription(transcription):
      result = response.json()
      return result["choices"][0]["message"]["content"].strip()
 
-     
+@login_required     
 def blog_list(request):
      blog_articles = BlogPost.objects.filter(user=request.user)
      return render(request, 'all-blogs.html', {'blog_articles': blog_articles})
-
+@login_required
 def blog_details(request, pk):
     blog_article_detail = BlogPost.objects.get(id=pk)
     if request.user == blog_article_detail.user:
