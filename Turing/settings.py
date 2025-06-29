@@ -28,7 +28,9 @@ SECRET_KEY = 'django-insecure-_)j-u_3ej$^^h2=hk)$z@d@&smd7ndg6+x7)s(=tyw5_t5qhj1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['turing-ai.onrender.com','localhost', '127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['https://turing-ai.onrender.com']
+
 
 
 # Application definition
