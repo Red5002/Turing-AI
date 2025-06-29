@@ -55,12 +55,12 @@ def generate_blog(request):
 
 
 def yt_title(link):
-     yt = YouTube(link, client="WEB")
+     yt = YouTube(link, client="WEB", use_po_token=True)
      title = yt.title
      return title
 
 def download_audio(link):
-     yt = YouTube(link, client="WEB")
+     yt = YouTube(link, client="WEB", use_po_token=True)
      audio_stream = yt.streams.filter(only_audio=True).first()
      out_file = audio_stream.download(output_path=settings.MEDIA_ROOT)
      base, ext = os.path.splitext(out_file)
