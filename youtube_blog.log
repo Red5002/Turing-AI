@@ -13,3 +13,16 @@ INFO 2025-06-30 02:28:25,360 views Transcription completed successfully
 INFO 2025-06-30 02:28:25,362 views Starting blog content generation...
 INFO 2025-06-30 02:28:27,786 views Blog content generated successfully
 INFO 2025-06-30 02:28:30,601 views Successfully generated blog for: https://www.youtube.com/watch?v=gr-PVB0tNFM&pp=0gcJCfwAo7VqN5tD
+INFO 2025-06-30 03:04:38,531 views Starting blog generation for: https://www.youtube.com/watch?v=gr-PVB0tNFM&pp=0gcJCfwAo7VqN5tD
+INFO 2025-06-30 03:04:38,613 views Getting title for: https://www.youtube.com/watch?v=gr-PVB0tNFM&pp=0gcJCfwAo7VqN5tD
+INFO 2025-06-30 03:05:13,254 views Successfully retrieved title: What is Dark Matter?
+INFO 2025-06-30 03:05:13,255 views Starting transcription for: https://www.youtube.com/watch?v=gr-PVB0tNFM&pp=0gcJCfwAo7VqN5tD
+INFO 2025-06-30 03:05:13,257 views Starting audio download for: https://www.youtube.com/watch?v=gr-PVB0tNFM&pp=0gcJCfwAo7VqN5tD
+INFO 2025-06-30 03:05:34,078 views Downloading audio stream...
+INFO 2025-06-30 03:05:46,182 views Successfully converted to MP3: C:\Users\emma\Documents\projects\ai_blog\backend\Turing\media\What is Dark Matter.mp3
+INFO 2025-06-30 03:05:55,275 views Starting transcription process...
+INFO 2025-06-30 03:06:10,165 views Cleaned up audio file: C:\Users\emma\Documents\projects\ai_blog\backend\Turing\media\What is Dark Matter.mp3
+INFO 2025-06-30 03:06:10,167 views Transcription completed successfully
+INFO 2025-06-30 03:06:10,169 views Starting blog content generation...
+INFO 2025-06-30 03:06:14,852 views Blog content generated successfully
+INFO 2025-06-30 03:06:19,401 views Successfully generated blog for: https://www.youtube.com/watch?v=gr-PVB0tNFM&pp=0gcJCfwAo7VqN5tD
