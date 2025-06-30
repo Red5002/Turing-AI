@@ -26,7 +26,7 @@ load_dotenv(dotenv_path=BASE_DIR / '.env')
 SECRET_KEY = 'django-insecure-_)j-u_3ej$^^h2=hk)$z@d@&smd7ndg6+x7)s(=tyw5_t5qhj1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['turing-ai.onrender.com','localhost', '127.0.0.1']
 CSRF_TRUSTED_ORIGINS = ['https://turing-ai.onrender.com']
@@ -166,3 +166,10 @@ LOGGING = {
         },
     },
 }
+
+if os.getenv('ENVIRONMENT') == 'production':
+    YOUTUBE_BASE_DELAY = 5
+    YOUTUBE_MAX_RETRIES = 4
+else:
+    YOUTUBE_BASE_DELAY = 2
+    YOUTUBE_MAX_RETRIES = 3

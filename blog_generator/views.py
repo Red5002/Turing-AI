@@ -26,7 +26,7 @@ logger = logging.getLogger(__name__)
 def index(request):
     return render(request, 'index.html')
 
-def safe_youtube_request(link, max_retries=3, base_delay=2):
+def safe_youtube_request(link, max_retries=3, base_delay=3):
     """
     Safely create YouTube object with retry logic for 409 errors
     """
@@ -42,16 +42,16 @@ def safe_youtube_request(link, max_retries=3, base_delay=2):
             yt = YouTube(link, client="WEB")
             
             # Add small delay after successful creation
-            time.sleep(random.uniform(0.5, 1.5))
+            time.sleep(random.uniform(1, 2.5))
             
             return yt
             
         except Exception as e:
             error_msg = str(e).lower()
             
-            if "409" in error_msg or "too many requests" in error_msg:
+            if "409" in error_msg or "429" in error_msg or "too many requests" in error_msg:
                 if attempt < max_retries - 1:
-                    logger.warning(f"Rate limited (409 error), attempt {attempt + 1}/{max_retries}")
+                    logger.warning(f"Rate limited (429/409 error), attempt {attempt + 1}/{max_retries}")
                     continue
                 else:
                     logger.error(f"Max retries exceeded for rate limiting: {link}")
