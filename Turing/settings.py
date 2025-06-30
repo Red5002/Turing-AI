@@ -175,3 +175,18 @@ if os.getenv('ENVIRONMENT') == 'production':
 else:
     YOUTUBE_BASE_DELAY = 2
     YOUTUBE_MAX_RETRIES = 3
+    
+if DEBUG:
+    CACHES = {
+        'default': {
+            'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+            'LOCATION': 'dev-cache',
+        }
+    }
+else:
+    CACHES = {
+        'default': {
+            'BACKEND': 'django.core.cache.backends.redis.RedisCache',
+            'LOCATION': 'redis://127.0.0.1:6379/1',
+        }
+    }  
